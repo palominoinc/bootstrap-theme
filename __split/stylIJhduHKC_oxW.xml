@@ -27,7 +27,7 @@ Modification of the code below is permitted and encouraged, at your own risk.
               <div class="page-header">
                 <h1>
                   <xsl:value-of select="/web/settings/title"/>
-                  <xsl:text> </xsl:text><small>(Bootstrap Theme)</small>
+                  <xsl:text> </xsl:text><small>Bootstrap Basic Layout</small>
                 </h1>
               </div>
               <div class="row">
@@ -65,7 +65,7 @@ Modification of the code below is permitted and encouraged, at your own risk.
               <div class="page-header">
                 <h1>
                   <xsl:value-of select="/web/settings/title"/>
-                  <small>Basic Bootstrap Theme</small>
+                  <xsl:text> </xsl:text><small>Bootstrap 3-column Layout</small>
                 </h1>
               </div>
               <div class="row">
