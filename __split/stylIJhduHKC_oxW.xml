@@ -17,7 +17,7 @@ Modification of the code below is permitted and encouraged, at your own risk.
                 xmlns:wp="http://www.palominosys.com/wp"
                 xmlns:fn="http://www.w3.org/2005/xpath-functions"
                 >
-  <xsl:template match="*" mode="page-template" priority="0.5">
+  <xsl:template match="* | *[@design='basic']" mode="page-template" priority="0.5">
     <html lang="en">
       <xsl:call-template name="bootstrap-theme-head"/>
       <body style="">
