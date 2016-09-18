@@ -1,2 +1,2 @@
 <?xml version="1.0"?>
-<resource-link id="resoVG_RGmknXcUp" link="js/jquery.min.js" type="javascript" webpalschematype="wpAppResourceLink"/>
+<resource-link id="resoVG_RGmknXcUp" link="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="javascript" webpalschematype="wpAppResourceLink"/>

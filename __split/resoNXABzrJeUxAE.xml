@@ -1,2 +1,9 @@
 <?xml version="1.0"?>
-<resource-links column-widths="120,90,292" id="resoNXABzrJeUxAE" webpalschematype="wpAppResourceLinks"><resource-link id="resowD8uKNcGWU4F" __stub="yes"/><resource-link id="resoMRpmx9tGKYCC" __stub="yes"/><resource-link id="resoLLyY8mAfUZVD" __stub="yes"/><resource-link id="resoHjUK4Wz9XMzX" __stub="yes"/><resource-link id="resoVG_RGmknXcUp" __stub="yes"/><resource-link id="resoi1yqjBR8NwAk" __stub="yes"/></resource-links>
+<resource-links column-widths="120,90,489" id="resoNXABzrJeUxAE" webpalschematype="wpAppResourceLinks">
+    <resource-link id="resowD8uKNcGWU4F" __stub="yes"/>
+    <resource-link id="resoMRpmx9tGKYCC" __stub="yes"/>
+    <resource-link id="resoLLyY8mAfUZVD" __stub="yes"/>
+    <resource-link id="resoHjUK4Wz9XMzX" __stub="yes"/>
+    <resource-link id="resoVG_RGmknXcUp" __stub="yes"/>
+    <resource-link id="resoi1yqjBR8NwAk" __stub="yes"/>
+  </resource-links>
