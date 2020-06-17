@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resource-links column-widths="72,90,489" id="resoNXABzrJeUxAE" webpalschematype="wpAppResourceLinks">
+  <resource-link id="resowD8uKNcGWU4F" link="css/bootstrap-theme.min.css" type="css" webpalschematype="wpAppResourceLink"/>
+  <resource-link id="resoMRpmx9tGKYCC" link="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="css" webpalschematype="wpAppResourceLink"/>
+  <resource-link id="resoLLyY8mAfUZVD" link="css/style.css" type="css" webpalschematype="wpAppResourceLink"/>
+  <resource-link id="resoHjUK4Wz9XMzX" link="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="javascript" webpalschematype="wpAppResourceLink"/>
+  <resource-link id="resoVG_RGmknXcUp" link="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="javascript" webpalschematype="wpAppResourceLink"/>
+  <resource-link id="resoi1yqjBR8NwAk" link="js/scripts.js" type="javascript" webpalschematype="wpAppResourceLink"/>
+</resource-links>

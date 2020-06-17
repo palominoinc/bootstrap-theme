@@ -1,0 +1,10 @@
+**/.meta
+/node.xml
+#*
+*~
+.tern-port
+__trash
+**/__trash
+**/laravel-configuration/config
+**/extensions/README.md
+/web/published.xml

@@ -1,0 +1,25 @@
+{
+    "name": "nwidart/bootstraptheme",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Extensions\\BootstrapTheme\\Providers\\BootstrapThemeServiceProvider"
+            ],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Extensions\\BootstrapTheme\\": ""
+        }
+    }
+}
