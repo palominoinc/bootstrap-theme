@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stylesheet id="stylIJhduHKC_oxW" lang="any" show-in="main" webpalschematype="wpAppStylesheet"><![CDATA[<?xml version="1.0"?>
+<!DOCTYPE xsl:stylesheet [
+<!ENTITY nbsp "&#160;" >
+]>
+
+<!-- (c) 2001-present All Copyrights Palomino Inc.
+This code is for use within web applications powered by WebPal Cloud Server ONLY.
+Use in other Content Management Applications is not permitted.
+Modification of the code below is permitted and encouraged, at your own risk.
+-->
+
+<xsl:stylesheet version="1.0"
+                exclude-result-prefixes="wp php fn xsl"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:php="http://php.net/xsl"
+                xmlns:wp="http://www.palominosys.com/wp"
+                xmlns:fn="http://www.w3.org/2005/xpath-functions"
+                >
+  
+  <xsl:template match="* | *[@design='basic']" mode="page-template" priority="0.5">
+    <html lang="en">
+      <xsl:call-template name="bootstrap-theme-head"/>
+      <body style="">
+        <xsl:call-template name="page-navbar"/>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <xsl:call-template name="page-header"/>
+              <div class="row">
+                <div class="col-md-3">
+                  <ul>
+                    <xsl:apply-templates select="/web/pages/page" mode="navigation"/>
+                  </ul>
+                </div>
+                <div class="col-md-8">
+                  <xsl:call-template name="page-content"/>
+                </div>
+                <div class="col-md-1">
+                </div>
+              </div>
+              <div class="row footer">
+                <div class="col-md-12">
+                  (c) All Copyrights by Palomino Inc.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <xsl:call-template name="include-extension-scripts"/>
+      </body>
+    </html>
+  </xsl:template>
+  
+  
+  
+  
+
+  <xsl:template match="*[@design='3-column']" mode="page-template" priority="0.5">
+    <html lang="en">
+      <xsl:call-template name="bootstrap-theme-head"/>
+      <body style="">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="page-header">
+                <h1>
+                  <xsl:value-of select="/web/settings/title"/>
+                  <xsl:text> </xsl:text><small><xsl:value-of select="/web/settings/description"/></small>
+                </h1>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <ul>
+                    <xsl:apply-templates select="/web/pages/page" mode="navigation"/>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <xsl:call-template name="page-content"/>
+                </div>
+                <div class="col-md-3">
+                  <xsl:apply-templates 
+                                       select="(./html[@show-in='sidebar-right']
+                                               | /web//page[@name='common']/html[@show-in='sidebar-right'])"/>
+                </div>
+              </div>
+              <div class="row footer">
+                <div class="col-md-12">
+                  (c) All Copyrights by Palomino Inc.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <xsl:call-template name="include-extension-scripts"/>
+      </body>
+    </html>
+  </xsl:template>
+
+  <xsl:template name="bootstrap-theme-head">
+    <head>
+      <meta charset="utf-8"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+      <title><xsl:value-of select="/web/settings/title"/></title>
+<!--       <link href="css/bootstrap.min.css" rel="stylesheet"/>
+      <link href="css/style.css" rel="stylesheet"/> -->
+      <xsl:call-template name="include-extension-styles"/>
+    </head>
+  </xsl:template>
+
+  <xsl:template name="page-header">
+  	<div class="page-header">
+      <h1>
+        WebPal Resources <small>for Editors, Admins, Collaborators and Coders</small>
+      </h1>
+    </div>
+  </xsl:template>
+  
+  <xsl:template name="page-navbar">
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <a class="navbar-brand" href="#">
+          <img></img>
+        </a>
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">WebPal.net <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>    
+
+<!--     <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="http://www.webpal.net" target="_blank">WebPal.net</a></li>
+        <li><a href="http://www.webpal.net/about">Contact</a></li>
+      </ul>
+    </div> -->
+  </xsl:template>  
+  
+</xsl:stylesheet>]]></stylesheet>

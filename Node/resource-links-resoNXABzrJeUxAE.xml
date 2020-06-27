@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resource-links column-widths="72,90,489" id="resoNXABzrJeUxAE" webpalschematype="wpAppResourceLinks">
+  <resource-link id="resowD8uKNcGWU4F" link="/resource/ext/BootstrapTheme/assets/css/vendor/bootstrap.min.css" type="css" webpalschematype="wpAppResourceLink"/>
+  <resource-link id="reso04mNweVgPOLm" link="/resource/ext/BootstrapTheme/assets/css/style.css" type="css" webpalschematype="wpAppResourceLink"/>
+</resource-links>

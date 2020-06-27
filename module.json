@@ -1,0 +1,13 @@
+{
+    "name": "BootstrapTheme",
+    "alias": "bootstraptheme",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Extensions\\BootstrapTheme\\Providers\\BootstrapThemeServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

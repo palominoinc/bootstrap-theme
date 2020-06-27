@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stylesheet id="stylIJhduHKC_oxW" lang="any" name="xsl-pages" show-in="main" webpalschematype="wpAppStylesheet"><![CDATA[<?xml version="1.0"?>
+<!DOCTYPE xsl:stylesheet [
+<!ENTITY nbsp "&#160;" >
+]>
+
+<!-- (c) 2001-present All Copyrights Palomino Inc.
+This code is for use within web applications powered by WebPal Cloud Server ONLY.
+Use in other Content Management Applications is not permitted.
+Modification of the code below is permitted and encouraged, at your own risk.
+-->
+
+<xsl:stylesheet version="1.0"
+                exclude-result-prefixes="wp php fn xsl"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:php="http://php.net/xsl"
+                xmlns:wp="http://www.palominosys.com/wp"
+                xmlns:fn="http://www.w3.org/2005/xpath-functions"
+                >
+
+  
+
+</xsl:stylesheet>]]></stylesheet>

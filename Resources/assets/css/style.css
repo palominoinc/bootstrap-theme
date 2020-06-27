@@ -1,0 +1,193 @@
+pre {
+ white-space: pre-wrap;       /* css-3 */
+ white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+ white-space: -pre-wrap;      /* Opera 4-6 */
+ white-space: -o-pre-wrap;    /* Opera 7 */
+ word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+/* BS3 Class Import */
+.small, small {
+  font-size: 65%;
+}
+
+/* BS3 Class Import */
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.wpHtml h1 {
+  font-weight: lighter;
+  font-size: 40px;
+}
+
+.PageContent {
+  padding: 2rem 0;
+  padding-left: 3rem;
+}
+
+.PageHeader {
+  margin: 0;
+  background: url('/resource/ext/BootstrapTheme/assets/images/webpal-user-manual-icons.png'), repeat-x, linear-gradient(rgb(1, 71, 118) 0%, rgb(1, 105, 173) 100%);
+  padding: 3.25rem 0;
+  border-bottom: 0;
+  color: rgb(255, 255, 255);
+}
+
+.PageHeader small {
+  color: rgb(132, 178, 210);
+}
+
+.PageHeader h1 {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+a.pager {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 10px 0 10px 5px;
+}
+
+a.pager:hover {
+  background: #f1f1f1;
+  color: #343a40;
+}
+
+.SideNavigation, .SideNavigation > ul {
+  padding: 0;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding-bottom: 15px;
+}
+
+.SideNavigation > ul li {
+  list-style: none;    
+  margin-bottom: 2px;
+}
+
+.SideNavigation a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.SideNavigation-header {
+  color: #333;
+  list-style: none;
+  border-bottom: 1px dashed #d8d8d8;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+footer {
+  margin-top: 30px;
+  border-top: 1px solid #ddd;
+  padding: 15px 0;
+  text-align: center;
+}
+
+.ApiCommand h4 {
+  color: #333840;
+  font-size: 1.5rem;
+}
+
+.ApiCommand h5 {
+  color: #434a54;
+  font-size: 1rem;
+}
+
+.ApiCommand .description {
+  color: #59606e;
+  font-size: 1rem;
+}
+
+.ApiCommand thead th {
+  color: #59606e;
+}
+
+.ApiCommand tbody td {
+  color: #434a54;
+}
+
+.ApiCommand pre > code {
+  background-color: #f6f7fa;
+  border: 1px solid #afbacd;
+  border-radius: 0.25rem;
+ padding: 1rem;
+}
+
+.badge-required {
+  background-color: #a9ede8;
+  color: #0a2b29;
+}
+
+.badge-optional {
+  background-color: #ebeff5;
+  color: #434a54;
+}
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: white;
+  color: black;
+}
+
+.hljs-comment,
+.hljs-quote,
+.hljs-variable {
+  color: #008000;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-built_in,
+.hljs-name,
+.hljs-tag {
+  color: #00f;
+}
+
+.hljs-string,
+.hljs-title,
+.hljs-section,
+.hljs-attribute,
+.hljs-literal,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-addition {
+  color: #a31515;
+}
+
+.hljs-deletion,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-meta {
+  color: #2b91af;
+}
+
+.hljs-doctag {
+  color: #808080;
+}
+
+.hljs-attr {
+  color: #f00;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link {
+  color: #00b0e8;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
