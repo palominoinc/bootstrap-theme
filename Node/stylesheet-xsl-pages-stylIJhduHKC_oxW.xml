@@ -18,6 +18,180 @@ Modification of the code below is permitted and encouraged, at your own risk.
                 xmlns:fn="http://www.w3.org/2005/xpath-functions"
                 >
 
+  <xsl:template match="page | page[@design='basic']" mode="page-template" priority="0.75">
+    <html lang="en">
+      <xsl:call-template name="bootstrap-theme-head"/>
+      <body style="">
+        <xsl:call-template name="page-navbar"/>
+        <xsl:call-template name="page-header"/>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-3">
+                  <ul class="SideNavigation">
+                    <xsl:apply-templates select="/web/pages/page" mode="side-navigation"/>
+                  </ul>
+                </div>
+                <div class="col-md-8">
+                  <div class="PageContent">
+                    <xsl:call-template name="webpal-developers-custom-pager"/> 
+                    <xsl:apply-templates />
+                  </div>
+                </div>
+                <div class="col-md-1">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <xsl:call-template name="page-footer" />
+        <xsl:call-template name="include-extension-scripts"/>
+      </body>
+    </html>
+  </xsl:template>
+
+  <xsl:template name="bootstrap-theme-head">
+    <head>
+      <meta charset="utf-8"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+      <title><xsl:value-of select="/web/settings/title"/></title>
+      <xsl:call-template name="include-extension-styles"/>
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700" rel="stylesheet" />
+    </head>
+  </xsl:template>
+
+  <xsl:template name="page-header">
+    <div class="PageHeader">
+      <div class="container">
+        <h1>
+          WebPal Resources <small>for Editors, Admins, Collaborators and Coders</small>
+        </h1>
+      </div>
+    </div>
+  </xsl:template>
+
+  <xsl:template name="page-navbar">
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <a class="navbar-brand" href="#">
+          <img width="180px" src="/resource/ext/BootstrapTheme/assets/images/webpal-logo-blue.png"></img>
+        </a>
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="https://www.webpal.net/home">WebPal.net <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://www.webpal.net/about">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>    
+  </xsl:template>
   
+  <xsl:template name="page-footer" mode="page-template">
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <p>© All Copyrights by Palomino Inc.</p>
+          </div>
+          <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+      </div>
+    </footer>
+  </xsl:template>  
+
+  <xsl:template match="page" mode="side-navigation">
+    <xsl:param name="path" select="''"/>
+    <xsl:if test="@show-in-menu = 'yes'">
+      <xsl:choose>
+        <xsl:when test="page">
+          <li class="SideNavigation-header">
+            <xsl:choose>
+              <xsl:when test="shorttitle != ''"><xsl:value-of select="shorttitle"/></xsl:when>
+              <xsl:when test="title != ''"><xsl:value-of select="title"/></xsl:when>
+              <xsl:otherwise><xsl:value-of select="@name"/></xsl:otherwise>
+            </xsl:choose>
+          </li>
+        </xsl:when>
+        <xsl:otherwise>
+          <li>
+            <a href="{$path}/{@name}">
+              <xsl:choose>
+                <xsl:when test="shorttitle != ''"><xsl:value-of select="shorttitle"/></xsl:when>
+                <xsl:when test="title != ''"><xsl:value-of select="title"/></xsl:when>
+                <xsl:otherwise><xsl:value-of select="@name"/></xsl:otherwise>
+              </xsl:choose>
+            </a>
+          </li>        
+        </xsl:otherwise>
+      </xsl:choose>
+      <xsl:if test="page">
+        <ul class="SideNavigation-children">
+          <xsl:apply-templates select="page" mode="side-navigation">
+            <xsl:with-param name="path" select="concat($path, '/', @name)"/>
+          </xsl:apply-templates>
+        </ul>
+      </xsl:if>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template name="webpal-developers-custom-pager">
+    <div class="text-nowrap text-right pb-2">
+      <xsl:call-template name="webpal-developers-custom-pager-prev"/>
+      <xsl:call-template name="webpal-developers-custom-pager-next"/>
+    </div>
+  </xsl:template>
+
+  <xsl:template name="webpal-developers-custom-pager-next">
+    <xsl:variable name="next-page" select="(following::page[html])[1]"/>
+    <xsl:if test="$next-page">
+      <xsl:choose>
+        <xsl:when test="not(following-sibling::page)">
+          <a class="btn btn-outline-dark pager pager-default" href="../{../following-sibling::page[1]/@name}/{$next-page/@name}">
+            Next: 
+            <xsl:value-of select="$next-page/../shorttitle"/>
+            <xsl:text>: </xsl:text>
+            <xsl:value-of select="$next-page/shorttitle"/>
+          </a>
+        </xsl:when>
+        <xsl:otherwise>
+          <a class="btn btn-outline-dark pager pager-default" href="{$next-page/@name}">
+            Next: 
+            <xsl:value-of select="$next-page/shorttitle"/>
+          </a>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template name="webpal-developers-custom-pager-prev">
+    <xsl:variable name="prev-page" select="(preceding::page[html])[position()=last()]"/>
+    <xsl:if test="$prev-page">
+      <xsl:choose>
+        <xsl:when test="not(preceding-sibling::page)">
+          <a class="btn btn-outline-dark pager pager-default" href="../{../preceding-sibling::page[position()=last()]/@name}/{$prev-page/@name}">
+            Previous: 
+            <xsl:value-of select="$prev-page/../shorttitle"/>
+            <xsl:text>: </xsl:text>
+            <xsl:value-of select="$prev-page/shorttitle"/>
+          </a>
+        </xsl:when>
+        <xsl:otherwise>
+          <a class="btn btn-outline-dark pager pager-default" href="{$prev-page/@name}">
+            Previous: 
+            <xsl:value-of select="$prev-page/shorttitle"/>
+          </a>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:if>
+  </xsl:template>
 
 </xsl:stylesheet>]]></stylesheet>

@@ -90,13 +90,18 @@ footer {
 }
 
 .ApiCommand h4 {
+  background: #f0f0f0;
+  border-left: solid 4px #ccc;
   color: #333840;
   font-size: 1.5rem;
+  font-weight: bold;
+  padding: 8px;
 }
 
 .ApiCommand h5 {
   color: #434a54;
   font-size: 1rem;
+  font-weight: bold;
 }
 
 .ApiCommand .description {
@@ -112,11 +117,11 @@ footer {
   color: #434a54;
 }
 
-.ApiCommand pre > code {
+pre > code {
   background-color: #f6f7fa;
   border: 1px solid #afbacd;
   border-radius: 0.25rem;
- padding: 1rem;
+  padding: 1rem;
 }
 
 .badge-required {
